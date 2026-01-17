@@ -240,30 +240,14 @@
                             </svg>
                             @php
                                 $rawWaFooter = preg_replace('/[^0-9]/', '', $footerWhatsapp->value);
-                                // Pastikan format diawali 62 untuk link wa.me
-                                if (str_starts_with($rawWaFooter, '0')) {
-                                    $waLinkFooter = '62' . substr($rawWaFooter, 1);
-                                } elseif (str_starts_with($rawWaFooter, '62')) {
-                                    $waLinkFooter = $rawWaFooter;
-                                } else {
-                                    $waLinkFooter = '62' . $rawWaFooter;
-                                }
-
-                                $whatsappLink = 'https://wa.me/' . $waLinkFooter;
-
-                                $wa = $footerWhatsapp->value;
-                                if (strlen($wa) > 3) {
-                                    $part1 = substr($wa, 0, 3);
-                                    $part2 = substr($wa, 3, 4);
-                                    $part3 = substr($wa, 7);
-                                    $formattedWa = "+62 {$part1}-{$part2}-{$part3}";
-                                } else {
-                                    $formattedWa = "+62 " . $wa;
-                                }
+                                $waBaseFooter = preg_replace('/^62|^0/', '', $rawWaFooter);
+                                $formattedWaFooter = '+62 ' . substr($waBaseFooter, 0, 3) . '-' . substr($waBaseFooter, 3, 4) . '-' . substr($waBaseFooter, 7);
+                                $waLinkFooter = '62' . $waBaseFooter;
                             @endphp
-                            <a href="{{ $whatsappLink }}" target="_blank" rel="noopener noreferrer"
+                            <a href="https://wa.me/{{ $waLinkFooter }}" target="_blank" rel="noopener noreferrer"
+                                title="Chat on WhatsApp with {{ $formattedWaFooter }}"
                                 class="inline-block text-xs sm:text-sm md:text-base text-gray-200 hover:text-white transition-all duration-200 pb-1 hover:border-b-2 hover:border-white border-b-2 border-transparent">
-                                {{ $formattedWa }}
+                                {{ $formattedWaFooter }}
                             </a>
                         </li>
                     @endif

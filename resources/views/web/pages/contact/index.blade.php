@@ -29,20 +29,15 @@
                                         </svg>
                                     </div>
                                     @php
-                                        $wa = $siteWhatsapp;
-                                        // Format: +62 812-3456-7890
-                                        // Asumsi input: 81234567890 (tanpa 0 di depan, tanpa +62)
-                                        if (strlen($wa) > 3) {
-                                            // Split: 3 digit pertama, 4 digit kedua, sisanya
-                                            $part1 = substr($wa, 0, 3);
-                                            $part2 = substr($wa, 3, 4);
-                                            $part3 = substr($wa, 7);
-                                            $formattedWa = "+62 {$part1}-{$part2}-{$part3}";
-                                        } else {
-                                            $formattedWa = "+62 " . $wa;
-                                        }
+                                        // Unified formatting logic
+                                        $waRaw = preg_replace('/[^0-9]/', '', $siteWhatsapp);
+                                        $waBase = preg_replace('/^62|^0/', '', $waRaw);
+                                        $formattedWa = '+62 ' . substr($waBase, 0, 3) . '-' . substr($waBase, 3, 4) . '-' . substr($waBase, 7);
+                                        $waLink = '62' . $waBase;
                                     @endphp
-                                    <span class="text-black dark:text-slate-300 text-base">{{ $formattedWa }}</span>
+                                    <a href="https://wa.me/{{ $waLink }}" target="_blank" rel="noopener noreferrer"
+                                        title="Chat on WhatsApp with {{ $formattedWa }}"
+                                        class="text-black dark:text-slate-300 text-base hover:text-green-700 transition-colors">{{ $formattedWa }}</a>
                                 </li>
                             @endif
                             @if($sitePhone)
@@ -55,18 +50,12 @@
                                         </svg>
                                     </div>
                                     @php
-                                        $ph = $sitePhone;
-                                        // Format: +62 812-3456-7890
-                                        if (strlen($ph) > 3) {
-                                            $part1 = substr($ph, 0, 3);
-                                            $part2 = substr($ph, 3, 4);
-                                            $part3 = substr($ph, 7);
-                                            $formattedPh = "+62 {$part1}-{$part2}-{$part3}";
-                                        } else {
-                                            $formattedPh = "+62 " . $ph;
-                                        }
+                                        $phRaw = preg_replace('/[^0-9]/', '', $sitePhone);
+                                        $phBase = preg_replace('/^62|^0/', '', $phRaw);
+                                        $formattedPh = '+62 ' . substr($phBase, 0, 3) . '-' . substr($phBase, 3, 4) . '-' . substr($phBase, 7);
                                     @endphp
-                                    <span class="text-black dark:text-slate-300 text-base">{{ $formattedPh }}</span>
+                                    <a href="tel:{{ $phRaw }}" title="Call {{ $formattedPh }}"
+                                        class="text-black dark:text-slate-300 text-base hover:text-green-700 transition-colors">{{ $formattedPh }}</a>
                                 </li>
                             @endif
                             @if($siteEmail)
@@ -78,7 +67,8 @@
                                                 d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                         </svg>
                                     </div>
-                                    <span class="text-black dark:text-slate-300 text-base">{{ $siteEmail }}</span>
+                                    <a href="mailto:{{ $siteEmail }}" title="Email {{ $siteEmail }}"
+                                        class="text-black dark:text-slate-300 text-base hover:text-green-700 transition-colors">{{ $siteEmail }}</a>
                                 </li>
                             @endif
                         </ul>
@@ -226,20 +216,10 @@
 
         <!-- Floating WhatsApp Button -->
         @if($siteWhatsapp)
-            @php
-                $rawWa = preg_replace('/[^0-9]/', '', $siteWhatsapp);
-                // Pastikan format diawali 62
-                if (str_starts_with($rawWa, '0')) {
-                    $waLink = '62' . substr($rawWa, 1);
-                } elseif (str_starts_with($rawWa, '62')) {
-                    $waLink = $rawWa;
-                } else {
-                    $waLink = '62' . $rawWa;
-                }
-            @endphp
             <a href="https://wa.me/{{ $waLink }}" target="_blank" rel="noopener noreferrer"
+                title="Chat on WhatsApp with {{ $formattedWa }}"
                 class="fixed bottom-6 right-6 z-50 w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full shadow-lg flex items-center justify-center border-2 border-green-600 hover:scale-110 transition-transform duration-300"
-                aria-label="Chat WhatsApp">
+                aria-label="Chat on WhatsApp with {{ $formattedWa }}">
                 <div class="w-9 h-9 sm:w-12 sm:h-12 bg-green-600 rounded-full flex items-center justify-center">
                     <svg class="w-5 h-5 sm:w-7 sm:h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
                         <path
