@@ -21,7 +21,8 @@
                 <div class="space-y-4">
                     <div>
                         <h3 class="text-sm font-semibold text-gray-500 dark:text-slate-400 uppercase mb-1">Nama Sekolah</h3>
-                        <p class="text-base text-gray-900 dark:text-slate-100 font-semibold">MTs Nurul Falaah Soreang</p>
+                        <p class="text-base text-gray-900 dark:text-slate-100 font-semibold">
+                            {{ $globalSchoolProfile->nama_sekolah }}</p>
                     </div>
                     <div>
                         <h3 class="text-sm font-semibold text-gray-500 dark:text-slate-400 uppercase mb-1">NPSN</h3>
@@ -77,7 +78,8 @@
                     <div>
                         <h3 class="text-sm font-semibold text-gray-500 dark:text-slate-400 uppercase mb-1">Yayasan Pengelola
                         </h3>
-                        <p class="text-base text-black dark:text-slate-100">Yayasan Nurul Falaah Soreang</p>
+                        <p class="text-base text-black dark:text-slate-100">Yayasan
+                            {{ str_replace(['MTs', 'Mts'], '', $globalSchoolProfile->nama_sekolah) }}</p>
                     </div>
                     <div>
                         <h3 class="text-sm font-semibold text-gray-500 dark:text-slate-400 uppercase mb-1">Naungan</h3>

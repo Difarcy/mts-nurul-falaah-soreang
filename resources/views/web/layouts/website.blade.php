@@ -10,7 +10,7 @@
     <meta http-equiv="Expires" content="0">
 
     <title>
-        @yield('title'){{ View::hasSection('title') ? ' | ' : '' }}{{ $globalSchoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang' }}
+        @yield('title'){{ View::hasSection('title') ? ' | ' : '' }}{{ $globalSchoolProfile->nama_sekolah }}
     </title>
 
     @php

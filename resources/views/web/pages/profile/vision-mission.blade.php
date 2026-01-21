@@ -22,7 +22,7 @@
                         class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <div class="p-6 sm:p-8">
                             <h3
-                                class="text-lg sm:text-2xl font-bold text-green-700 dark:text-green-500 mb-4 text-center uppercase">
+                                class="text-lg sm:text-xl md:text-2xl font-bold text-green-700 dark:text-green-500 mb-4 text-center uppercase">
                                 - VISI -
                             </h3>
                             <div
@@ -45,7 +45,7 @@
                         class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <div class="p-6 sm:p-8">
                             <h3
-                                class="text-lg sm:text-2xl font-bold text-green-700 dark:text-green-500 mb-4 text-center uppercase">
+                                class="text-lg sm:text-xl md:text-2xl font-bold text-green-700 dark:text-green-500 mb-4 text-center uppercase">
                                 - MISI -
                             </h3>
                             <div
@@ -68,7 +68,7 @@
                         class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                         <div class="p-6 sm:p-8">
                             <h3
-                                class="text-lg sm:text-2xl font-bold text-green-700 dark:text-green-500 mb-4 text-center uppercase">
+                                class="text-lg sm:text-xl md:text-2xl font-bold text-green-700 dark:text-green-500 mb-4 text-center uppercase">
                                 - TUJUAN -
                             </h3>
                             <div
@@ -100,7 +100,7 @@
                     'articleEmptyMessage' => 'Belum ada artikel',
                     'schoolProfile' => null
                 ])
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
 @endsection

@@ -1,6 +1,6 @@
 @extends('web.layouts.website')
 
-@section('title', 'Informasi SPMB - ' . ($globalSchoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang'))
+@section('title', 'Informasi SPMB - ' . ($globalSchoolProfile->nama_sekolah))
 
 @section('content')
     <!-- Wrapper untuk Background Light/Dark -->
@@ -15,13 +15,15 @@
             </div>
 
             <div class="container mx-auto px-4 relative z-10 text-center">
-                <div
-                    class="inline-block py-2 px-6 rounded-full bg-green-600 text-white font-black text-base md:text-lg mb-6 shadow-xl transform -rotate-1">
-                    {{ $setting->academic_year ?? '2026/2027' }}
-                </div>
+                @if($setting?->academic_year)
+                    <div
+                        class="inline-block py-2 px-6 rounded-full bg-green-600 text-white font-black text-base md:text-lg mb-6 shadow-xl transform -rotate-1">
+                        {{ $setting->academic_year }}
+                    </div>
+                @endif
                 <h1
-                    class="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tight leading-tight drop-shadow-md">
-                    {{ $globalSchoolProfile->nama_sekolah ?? 'MTs NURUL FALAAH SOREANG' }}
+                    class="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight leading-tight drop-shadow-md">
+                    {{ $globalSchoolProfile->nama_sekolah }}
                 </h1>
                 @if($setting?->hero_slogan)
                     <p class="text-lg md:text-xl text-white max-w-2xl mx-auto font-medium leading-relaxed">
@@ -188,8 +190,10 @@
                         class="inline-block bg-green-600 text-white font-black text-xl md:text-2xl px-8 py-3 transform -skew-x-12 uppercase shadow-lg mb-2">
                         KEUNGGULAN KAMI
                     </div>
-                    <p class="text-gray-500 dark:text-gray-400 mt-4 max-w-2xl mx-auto">Kenapa memilih MTs Nurul Falaah
-                        sebagai tempat menuntut ilmu?</p>
+                    <p class="text-gray-500 dark:text-gray-400 mt-4 max-w-2xl mx-auto">Kenapa memilih
+                        {{ $globalSchoolProfile->nama_sekolah }}?
+                        sebagai tempat menuntut ilmu?
+                    </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">

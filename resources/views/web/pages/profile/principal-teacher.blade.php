@@ -23,7 +23,7 @@
                         @if($schoolProfile->kepala_sekolah_foto)
                             <img
                                 src="{{ asset('storage/' . $schoolProfile->kepala_sekolah_foto) }}"
-                                alt="Kepala Madrasah {{ $schoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang' }}"
+                                alt="Kepala Madrasah {{ $schoolProfile->nama_sekolah }}"
                                 class="w-full aspect-3/4 object-cover max-h-144 rounded-lg shadow-md"
                             >
                         @else
@@ -35,7 +35,7 @@
                     <!-- Teks Sambutan (Kanan) -->
                     <div class="w-full md:w-[70%] lg:w-[75%] flex-1">
                         <div class="mb-6 text-center md:text-left border-b border-gray-200 dark:border-slate-700 pb-4">
-                            <p class="text-lg sm:text-2xl font-bold text-gray-900 dark:text-slate-100 mb-2">
+                            <p class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-slate-100 mb-2">
                                 {{ $schoolProfile->kepala_sekolah_nama ?? 'Kepala Madrasah' }}
                             </p>
                             <p class="text-sm sm:text-lg text-green-700 dark:text-green-500 font-medium">

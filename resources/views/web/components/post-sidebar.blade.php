@@ -297,7 +297,7 @@
                     <div class="mb-3">
                         @if($schoolProfile->kepala_sekolah_foto)
                             <img src="{{ asset('storage/' . $schoolProfile->kepala_sekolah_foto) }}"
-                                alt="Kepala Madrasah {{ $schoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang' }}"
+                                alt="Kepala Madrasah {{ $schoolProfile->nama_sekolah }}"
                                 class="w-full aspect-3/4 object-cover mx-auto kepala-madrasah max-h-112">
                         @else
                             <div

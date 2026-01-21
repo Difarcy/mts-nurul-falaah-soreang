@@ -110,7 +110,7 @@
                     @if($showLogo)
                         <div class="mb-4 sm:mb-6">
                             <img src="{{ asset($logoPath) }}@if($logoVersion)?v={{ $logoVersion }}@endif"
-                                alt="Logo MTs Nurul Falaah Soreang"
+                                alt="Logo {{ $globalSchoolProfile->nama_sekolah }}"
                                 class="h-24 w-24 sm:h-32 sm:w-32 md:h-36 md:w-36 lg:h-40 lg:w-40 object-contain drop-shadow-[1px_1px_2px_rgba(0,0,0,0.4)] md:drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)] dark:drop-shadow-[2px_2px_4px_rgba(0,0,0,0.7)]">
                         </div>
                     @endif
@@ -185,7 +185,7 @@
                     @if($showLogo)
                         <div class="mb-4 sm:mb-6">
                             <img src="{{ asset($logoPath) }}@if($logoVersion)?v={{ $logoVersion }}@endif"
-                                alt="Logo MTs Nurul Falaah Soreang"
+                                alt="Logo {{ $globalSchoolProfile->nama_sekolah }}"
                                 class="h-24 w-24 sm:h-32 sm:w-32 md:h-36 md:w-36 lg:h-40 lg:w-40 object-contain drop-shadow-[1px_1px_2px_rgba(0,0,0,0.4)] md:drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)] dark:drop-shadow-[2px_2px_4px_rgba(0,0,0,0.7)]">
                         </div>
                     @endif

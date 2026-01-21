@@ -18,22 +18,21 @@
             <div class="flex items-center gap-3 sm:gap-4">
                 <a href="{{ route('web.home') }}"
                     class="flex items-center gap-2 sm:gap-3 hover:opacity-90 transition-opacity">
-                    <img src="{{ $logoSrc }}"
-                        alt="Logo {{ $globalSchoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang' }}"
+                    <img src="{{ $logoSrc }}" alt="Logo {{ $globalSchoolProfile->nama_sekolah }}"
                         class="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-14 lg:w-14 object-contain shrink-0">
                     <div class="flex flex-col justify-center">
                         @php
-                            $namaLengkap = $globalSchoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang';
+                            $namaLengkap = $globalSchoolProfile->nama_sekolah;
                             // Logika pemisahan untuk tampilan dua baris
                             $parts = explode('Soreang', $namaLengkap);
                             $mainName = trim($parts[0] ?? $namaLengkap);
                             $locName = count($parts) > 1 ? 'Soreang' : '';
                         @endphp
-                        <span class="text-base md:text-lg lg:text-xl font-bold text-white leading-tight font-sans">
+                        <span class="text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight font-sans">
                             {{ $mainName }}
                         </span>
                         @if($locName)
-                            <span class="text-base md:text-lg lg:text-xl font-bold text-white leading-tight font-sans">
+                            <span class="text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight font-sans">
                                 {{ $locName }}
                             </span>
                         @endif
@@ -214,15 +213,17 @@
             <div class="flex items-center gap-3">
                 <a href="{{ route('web.home') }}"
                     class="flex items-center gap-2 sm:gap-3 hover:opacity-90 transition-opacity">
-                    <img src="{{ $logoSrc }}" alt="Logo MTs Nurul Falaah Soreang"
+                    <img src="{{ $logoSrc }}" alt="Logo {{ $globalSchoolProfile->nama_sekolah }}"
                         class="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-14 lg:w-14 object-contain shrink-0">
                     <div class="flex flex-col justify-center text-slate-900 dark:text-white">
                         <span class="text-base md:text-lg lg:text-xl font-bold leading-tight font-sans">
-                            MTs Nurul Falaah
+                            {{ $mainName }}
                         </span>
-                        <span class="text-base md:text-lg lg:text-xl font-bold leading-tight font-sans">
-                            Soreang
-                        </span>
+                        @if($locName)
+                            <span class="text-base md:text-lg lg:text-xl font-bold leading-tight font-sans">
+                                {{ $locName }}
+                            </span>
+                        @endif
                     </div>
                 </a>
             </div>

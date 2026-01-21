@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict IeusjavimCt9pbdM1fuYBRxFY9nnx3uWNZWL2Zfhz6XpigmABnf2zaLoMkI4tAv
+\restrict g6Id2Tubvc8tH2nBBejbULRltVocV1uiN9GT79kxclXWJB5laJgPGLoTP9gmJjJ
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.1
@@ -1429,7 +1429,7 @@ COPY public.posts (id, title, slug, type, excerpt, body, thumbnail_path, status,
 --
 
 COPY public.school_profiles (id, nama_sekolah, gambar_sekolah, deskripsi_sekolah, sejarah, visi, misi, tujuan, struktur_organisasi, kepala_sekolah_nama, kepala_sekolah_foto, kepala_sekolah_sambutan, created_at, updated_at) FROM stdin;
-1	MTs Nurul Falaah Soreang	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2026-01-20 11:23:27	2026-01-20 11:23:27
+1	MTs Nurul Falaah Soreang	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2026-01-20 19:58:07	2026-01-20 19:58:07
 \.
 
 
@@ -1486,7 +1486,7 @@ COPY public.student_achievements (id, judul, nama_siswa, kelas, jenis_prestasi, 
 --
 
 COPY public.users (id, name, username, password, remember_token, created_at, updated_at) FROM stdin;
-1	admin	admin_mts_nfs	$2y$12$Nf5bTh0cbB2eYI5cbRdYpOubOKU6MyhCbTB3XhoU33or9GG1KKrP6	\N	2026-01-20 11:23:27	2026-01-20 11:23:27
+1	Admin	admin	$2y$12$iLe/pO2GnDbT436CXElwYuFMwTFoc1dsTWMm.xU4zY6/kBwOIM5SG	\N	2026-01-20 19:58:07	2026-01-20 19:58:07
 \.
 
 
@@ -1495,7 +1495,7 @@ COPY public.users (id, name, username, password, remember_token, created_at, upd
 --
 
 COPY public.visual_identities (id, logo_path, tagline, judul, deskripsi, link, button_text, show_logo, show_tagline, show_title, show_description, show_button, promosi_banner_path, created_at, updated_at) FROM stdin;
-1	\N	\N	MTs Nurul Falaah Soreang	\N	\N	\N	t	t	t	t	t	\N	2026-01-20 11:23:27	2026-01-20 11:23:27
+1	\N	\N	\N	\N	\N	\N	t	t	t	t	t	\N	2026-01-20 19:58:07	2026-01-20 19:58:07
 \.
 
 
@@ -2214,5 +2214,5 @@ ALTER TABLE ONLY public.posts
 -- PostgreSQL database dump complete
 --
 
-\unrestrict IeusjavimCt9pbdM1fuYBRxFY9nnx3uWNZWL2Zfhz6XpigmABnf2zaLoMkI4tAv
+\unrestrict g6Id2Tubvc8tH2nBBejbULRltVocV1uiN9GT79kxclXWJB5laJgPGLoTP9gmJjJ
 

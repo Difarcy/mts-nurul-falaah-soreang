@@ -9,7 +9,7 @@ Platform informasi resmi sekolah yang mencakup profil, publikasi berita, agenda,
 - Framework Laravel 12
 - PHP ^8.2
 - Tailwind CSS 4.0 (Vite Plugin)
-- Vite 7.x
+- Vite 7
 - DBMS PostgreSQL
 - Editor TinyMCE 8
 - Emoji Picker Element

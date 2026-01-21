@@ -25,7 +25,6 @@ class InitialSystemSeeder extends Seeder
         VisualIdentity::updateOrCreate(
             ['id' => 1],
             [
-                'judul' => 'MTs Nurul Falaah Soreang',
                 'show_logo' => true,
                 'show_title' => true,
             ]

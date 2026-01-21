@@ -48,7 +48,7 @@
                                     $defaultBackground = asset('images/background/default-backgrounds.png') . (file_exists(public_path('images/background/default-backgrounds.png')) ? '?v=' . filemtime(public_path('images/background/default-backgrounds.png')) : '');
                                 @endphp
                                 <div class="highlight-slide shrink-0 w-full relative">
-                                    <img src="{{ $defaultBackground }}" alt="MTs Nurul Falaah Soreang"
+                                    <img src="{{ $defaultBackground }}" alt="{{ $globalSchoolProfile->nama_sekolah }}"
                                         class="w-full h-72 sm:h-80 md:h-96 lg:h-112 object-cover">
                                     <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent">
                                     </div>
@@ -291,7 +291,7 @@
                         <div class="mb-3">
                             @if($globalSchoolProfile && $globalSchoolProfile->kepala_sekolah_foto)
                                 <img src="{{ asset('storage/' . $globalSchoolProfile->kepala_sekolah_foto) }}"
-                                    alt="Kepala Madrasah {{ $globalSchoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang' }}"
+                                    alt="Kepala Madrasah {{ $globalSchoolProfile->nama_sekolah }}"
                                     class="w-full aspect-3/4 object-cover mx-auto kepala-madrasah max-h-112">
                             @else
                                 <div

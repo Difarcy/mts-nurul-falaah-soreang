@@ -260,9 +260,9 @@
                 </button>
 
                 <h4 id="calendar-title"
-                    class="text-lg font-extrabold text-gray-800 dark:text-slate-100 uppercase tracking-tight">
+                    class="text-sm sm:text-base font-bold text-gray-800 dark:text-slate-100 uppercase tracking-normal">
                     {{ $months[$selectedMonth - 1] }} <span
-                        class="text-green-700 dark:text-green-500 font-normal ml-1">{{ $selectedYear }}</span>
+                        class="text-green-700 dark:text-green-500 font-medium ml-1">{{ $selectedYear }}</span>
                 </h4>
 
                 <button type="button" data-calendar-action="next"
@@ -300,8 +300,8 @@
                         <div class="aspect-square p-0.5">
                             <div
                                 class="w-full h-full flex items-center justify-center text-base font-medium rounded-lg transition-all duration-300 cursor-pointer
-                                                                                    {{ $isCurrentMonth ? ($isSunday ? 'text-red-500 font-medium' : 'text-gray-700 dark:text-slate-300') : 'text-gray-300 dark:text-slate-600' }}
-                                                                                    {{ $isToday ? '!bg-gradient-to-br !from-green-600 !to-green-700 !text-white !font-bold shadow-lg shadow-green-200 dark:shadow-none scale-105' : '!hover:bg-green-200 dark:hover:bg-green-900/40 !hover:text-green-900 dark:hover:!text-green-200 !hover:font-semibold' }}">
+                                                                                        {{ $isCurrentMonth ? ($isSunday ? 'text-red-500 font-medium' : 'text-gray-700 dark:text-slate-300') : 'text-gray-300 dark:text-slate-600' }}
+                                                                                        {{ $isToday ? '!bg-gradient-to-br !from-green-600 !to-green-700 !text-white !font-bold shadow-lg shadow-green-200 dark:shadow-none scale-105' : '!hover:bg-green-200 dark:hover:bg-green-900/40 !hover:text-green-900 dark:hover:!text-green-200 !hover:font-semibold' }}">
                                 {{ $currentDate->day }}
                             </div>
                         </div>

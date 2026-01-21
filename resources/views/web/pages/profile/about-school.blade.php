@@ -18,14 +18,14 @@
             <div class="w-full lg:w-[70%]">
                 <!-- Subtitle -->
                 <h2
-                    class="text-lg sm:text-2xl font-bold text-gray-900 dark:text-slate-100 mb-6 text-center uppercase animate-on-scroll">
-                    {{ $schoolProfile->nama_sekolah ?? 'MTs NURUL FALAAH SOREANG' }}
+                    class="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-slate-100 mb-6 text-center uppercase animate-on-scroll">
+                    {{ $schoolProfile->nama_sekolah }}
                 </h2>
 
                 <!-- Foto Gedung Sekolah -->
                 @if($schoolProfile->gambar_sekolah)
                     <img src="{{ asset('storage/' . $schoolProfile->gambar_sekolah) }}"
-                        alt="Gedung {{ $schoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang' }}"
+                        alt="Gedung {{ $schoolProfile->nama_sekolah }}"
                         class="w-full h-80 sm:h-96 md:h-112.5 object-cover mb-8 animate-on-scroll">
                 @else
                     <div
@@ -50,7 +50,7 @@
                 <!-- Sejarah -->
                 <div class="mt-8 animate-on-scroll">
                     <h2
-                        class="text-lg sm:text-2xl font-bold text-gray-900 dark:text-slate-100 mb-6 flex items-center gap-3">
+                        class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-slate-100 mb-6 flex items-center gap-3">
                         <span class="w-px h-6 sm:h-8 bg-green-700 dark:bg-green-500"></span>
                         Sejarah
                     </h2>
@@ -81,7 +81,7 @@
                     'articleEmptyMessage' => 'Belum ada berita',
                     'schoolProfile' => null
                 ])
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
 @endsection

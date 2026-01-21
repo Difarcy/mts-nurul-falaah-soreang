@@ -14,9 +14,9 @@ class AdminUserSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'admin',
-            'username' => 'admin_mts_nfs',
-            'password' => Hash::make('@?MTS_NFS_Ceria#!'),
+            'name' => 'Admin',
+            'username' => 'admin',
+            'password' => Hash::make('admin'),
         ]);
     }
 }

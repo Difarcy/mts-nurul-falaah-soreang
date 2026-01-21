@@ -16,7 +16,7 @@
                 @if($schoolProfile->struktur_organisasi)
                     <div class="relative w-full overflow-hidden animate-on-scroll">
                         <img src="{{ asset('storage/' . $schoolProfile->struktur_organisasi) }}"
-                            alt="Struktur Organisasi {{ $schoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang' }}"
+                            alt="Struktur Organisasi {{ $schoolProfile->nama_sekolah }}"
                             class="w-full h-auto object-contain hover:scale-[1.02] transition-transform duration-500">
                     </div>
                 @else
@@ -39,7 +39,7 @@
                     'articleEmptyMessage' => 'Belum ada berita',
                     'schoolProfile' => null
                 ])
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 @endsection

@@ -1,6 +1,6 @@
 @extends('web.layouts.website')
 
-@section('title', $post->title . ' - MTs Nurul Falaah Soreang')
+@section('title', $post->title . ' - ' . $globalSchoolProfile->nama_sekolah)
 
 @section('content')
     <div class="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 max-w-7xl py-8 sm:py-12">
@@ -52,7 +52,7 @@
                     data-fallback-image="{{ asset('images/background/default-backgrounds.png') }}"
                     data-post-type="{{ $post->type }}" data-post-slug="{{ $post->slug }}">
                     <div class="space-y-4">
-                        <h1 class="text-xl sm:text-[35px] font-bold text-slate-900 dark:text-slate-100 leading-tight">
+                        <h1 class="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 leading-tight">
                             {{ $post->title }}
                         </h1>
 
@@ -188,7 +188,7 @@
                         @endif
 
                         <div
-                            class="prose prose-base max-w-none prose-slate dark:prose-invert prose-p:text-black dark:prose-p:text-slate-100 prose-headings:font-semibold prose-headings:tracking-tight prose-h1:text-xl sm:prose-h1:text-[35px] prose-h2:text-lg sm:prose-h2:text-2xl prose-h3:text-base sm:prose-h3:text-xl prose-a:text-green-700 dark:prose-a:text-green-400 prose-a:no-underline hover:prose-a:underline prose-img:rounded-none prose-pre:bg-slate-900 dark:prose-pre:bg-slate-800 prose-code:bg-slate-100 dark:prose-code:bg-slate-800 prose-table:w-full prose-th:border prose-td:border prose-th:border-slate-300 dark:prose-th:border-slate-700 prose-td:border-slate-300 dark:prose-td:border-slate-700">
+                            class="prose prose-base max-w-none prose-slate dark:prose-invert prose-p:text-black dark:prose-p:text-slate-100 prose-headings:font-semibold prose-headings:tracking-tight prose-h1:text-lg sm:prose-h1:text-xl md:prose-h1:text-2xl prose-h2:text-lg sm:prose-h2:text-xl md:prose-h2:text-2xl prose-h3:text-base sm:prose-h3:text-xl prose-a:text-green-700 dark:prose-a:text-green-400 prose-a:no-underline hover:prose-a:underline prose-img:rounded-none prose-pre:bg-slate-900 dark:prose-pre:bg-slate-800 prose-code:bg-slate-100 dark:prose-code:bg-slate-800 prose-table:w-full prose-th:border prose-td:border prose-th:border-slate-300 dark:prose-th:border-slate-700 prose-td:border-slate-300 dark:prose-td:border-slate-700">
                             <div class="editor-content overflow-x-auto">
                                 {!! $post->body !!}
                             </div>
@@ -290,7 +290,7 @@
                 <!-- Suggested Posts Section (hanya untuk berita) -->
                 @if($post->type === 'berita' && $suggestedPosts->isNotEmpty())
                     <section class="mt-10">
-                        <h2 class="text-lg sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3">Berita yang Disarankan
+                        <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3">Berita yang Disarankan
                         </h2>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                             @foreach($suggestedPosts as $item)
@@ -331,7 +331,7 @@
 
                 <!-- Comments Section -->
                 <section class="mt-10">
-                    <h2 class="text-lg sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6">Komentar ({{ $commentsCount }})
+                    <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6">Komentar ({{ $commentsCount }})
                     </h2>
 
                     @if($comments->isNotEmpty())
@@ -442,7 +442,7 @@
 
                     <!-- Leave a Reply Form -->
                     <div class="pt-6">
-                        <h3 class="text-lg sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6">Tinggalkan Komentar</h3>
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6">Tinggalkan Komentar</h3>
 
                         @if(session('comment_success'))
                             <div

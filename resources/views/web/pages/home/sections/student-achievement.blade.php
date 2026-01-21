@@ -1,6 +1,6 @@
 <!-- Prestasi Siswa -->
 <div class="mt-6">
-    <h2 class="text-lg sm:text-2xl font-bold text-gray-900 dark:text-slate-100 mb-6 flex items-center gap-3">
+    <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-slate-100 mb-6 flex items-center gap-3">
         <span class="w-px h-6 sm:h-8 bg-green-700 dark:bg-green-500"></span>
         Prestasi Siswa
     </h2>

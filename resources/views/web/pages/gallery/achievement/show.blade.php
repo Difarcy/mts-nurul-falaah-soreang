@@ -1,6 +1,6 @@
 @extends('web.layouts.website')
 
-@section('title', ($item->judul ?? 'Prestasi Siswa') . ' | MTs Nurul Falaah Soreang')
+@section('title', ($item->judul ?? 'Prestasi Siswa') . ' | ' . $globalSchoolProfile->nama_sekolah)
 
 @section('content')
     <div class="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 max-w-7xl py-8 sm:py-12">
@@ -35,7 +35,8 @@
             <div class="lg:col-span-2">
                 <article>
                     <div class="space-y-4">
-                        <h1 class="text-xl sm:text-[35px] font-bold text-slate-900 dark:text-slate-100 leading-tight">
+                        <h1
+                            class="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 leading-tight">
                             {{ $item->judul }}
                         </h1>
                         <div
@@ -64,7 +65,8 @@
                         <div class="p-0 mt-6">
                             <!-- Header with Name and Class (No Avatar) -->
                             <div class="mb-3">
-                                <p class="text-lg sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-0.5">
+                                <p
+                                    class="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-0.5">
                                     {{ $item->nama_siswa }}
                                 </p>
                                 <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">
@@ -73,7 +75,7 @@
                             </div>
 
                             <div
-                                class="prose prose-base max-w-none prose-slate dark:prose-invert prose-p:text-black dark:prose-p:text-slate-100 prose-headings:font-semibold prose-headings:tracking-tight prose-h1:text-xl sm:prose-h1:text-[35px] prose-h2:text-lg sm:prose-h2:text-2xl prose-h3:text-base sm:prose-h3:text-xl prose-a:text-green-700 dark:prose-a:text-green-400 prose-a:no-underline hover:prose-a:underline prose-img:rounded-none prose-pre:bg-slate-900 dark:prose-pre:bg-slate-800 prose-code:bg-slate-100 dark:prose-code:bg-slate-800 prose-table:w-full prose-th:border prose-td:border prose-th:border-slate-300 dark:prose-th:border-slate-700 prose-td:border-slate-300 dark:prose-td:border-slate-700">
+                                class="prose prose-base max-w-none prose-slate dark:prose-invert prose-p:text-black dark:prose-p:text-slate-100 prose-headings:font-semibold prose-headings:tracking-tight prose-h1:text-lg sm:prose-h1:text-xl md:prose-h1:text-2xl prose-h2:text-lg sm:prose-h2:text-xl md:prose-h2:text-2xl prose-h3:text-base sm:prose-h3:text-xl prose-a:text-green-700 dark:prose-a:text-green-400 prose-a:no-underline hover:prose-a:underline prose-img:rounded-none prose-pre:bg-slate-900 dark:prose-pre:bg-slate-800 prose-code:bg-slate-100 dark:prose-code:bg-slate-800 prose-table:w-full prose-th:border prose-td:border prose-th:border-slate-300 dark:prose-th:border-slate-700 prose-td:border-slate-300 dark:prose-td:border-slate-700">
                                 <div class="editor-content overflow-x-auto">{!! $item->deskripsi !!}</div>
                             </div>
 
@@ -81,7 +83,7 @@
                             @if($item->foto_sertifikat)
                                 <div class="mt-8">
                                     <h3
-                                        class="text-lg sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4 text-center">
+                                        class="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4 text-center">
                                         Sertifikat
                                         / Piagam</h3>
                                     <div
@@ -152,7 +154,7 @@
                     'articleFirst' => true,
                     'schoolProfile' => null
                 ])
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 @endsection

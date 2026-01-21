@@ -19,11 +19,11 @@
                     <a href="{{ route('web.home') }}"
                         class="flex items-center gap-3 hover:opacity-90 transition-opacity">
                         <img src="{{ asset($logoPath) }}@if($logoVersion)?v={{ $logoVersion }}@endif"
-                            alt="Logo {{ $globalSchoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang' }}"
+                            alt="Logo {{ $globalSchoolProfile->nama_sekolah }}"
                             class="h-10 w-10 sm:h-12 sm:w-12 object-contain shrink-0">
                         <div class="flex flex-col justify-center">
                             @php
-                                $namaSekolah = $globalSchoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang';
+                                $namaSekolah = $globalSchoolProfile->nama_sekolah;
                                 // Coba pisahkan jika mengandung kata "Soreang"
                                 $parts = explode('Soreang', $namaSekolah);
                                 $mainName = trim($parts[0]);
@@ -259,7 +259,7 @@
     <!-- Copyright -->
     <div class="w-full mt-8 pt-6 pb-2">
         <p class="text-xs sm:text-sm md:text-base text-gray-200 text-center">
-            Copyright © {{ $globalSchoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang' }}
+            Copyright © {{ $globalSchoolProfile->nama_sekolah }}
         </p>
     </div>
 </footer>
